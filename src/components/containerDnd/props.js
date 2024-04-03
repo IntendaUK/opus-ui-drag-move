@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 //Shared Props
-import { propsSharedContainer } from 'opus-ui';
+import { propsSharedContainer } from '@intenda/opus-ui';
 
 //Props
 const props = {

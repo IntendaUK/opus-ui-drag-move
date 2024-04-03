@@ -1,4 +1,4 @@
-import { clone, generateGuid } from 'opus-ui';
+import { clone, generateGuid } from '@intenda/opus-ui';
 
 let source = null;
 let sourceDragTargets = null;

@@ -1,5 +1,5 @@
 //Helpers
-import { clone } from 'opus-ui';
+import { clone } from '@intenda/opus-ui';
 
 //Event
 const onForceRemoveWgts = ({ setState, state: { wgts, forceRemoveWgts } }) => {

@@ -1,5 +1,5 @@
 //Opus
-import { registerComponentTypes } from 'opus-ui';
+import { registerComponentTypes } from '@intenda/opus-ui';
 
 //Components
 import { ContainerDnd } from './components/containerDnd';

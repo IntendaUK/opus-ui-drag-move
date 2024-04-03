@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 
 //External Helpers
-import { wrapWidgets } from 'opus-ui';
+import { wrapWidgets } from '@intenda/opus-ui';
 
 //Styles
 import './styles.css';

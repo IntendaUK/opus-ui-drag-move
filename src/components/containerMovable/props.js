@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 //System Helpers
-import { clone, generateGuid, propsSharedContainer } from 'opus-ui';
+import { clone, generateGuid, propsSharedContainer } from '@intenda/opus-ui';
 
 //Props
 const props = {

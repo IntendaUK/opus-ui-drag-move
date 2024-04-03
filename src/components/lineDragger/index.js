@@ -5,7 +5,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 //System
-import { createContext, fixScopeIds } from 'opus-ui';
+import { createContext, fixScopeIds } from '@intenda/opus-ui';
 
 //External Helpers
 import { setDisabled as setDisabledMoveManager } from '../containerMovable/moveManager';

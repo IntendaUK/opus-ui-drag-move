@@ -1,5 +1,5 @@
 //System Helpers
-import { generateGuid } from 'opus-ui';
+import { generateGuid } from '@intenda/opus-ui';
 
 //Helpers
 import { resetTarget, isDisabled } from '../dragManager';

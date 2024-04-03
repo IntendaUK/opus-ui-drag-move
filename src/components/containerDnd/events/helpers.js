@@ -1,5 +1,5 @@
 //System Helpers
-import { getScopedId, stateManager } from 'opus-ui';
+import { getScopedId, stateManager } from '@intenda/opus-ui';
 
 //Helpers
 import { getSourceDragTargets, getSource } from '../dragManager';

@@ -1,7 +1,7 @@
 //Helpers
 import { getDragger, getSource, getDropper, isDisabled } from '../dragManager';
 import { canDragToId } from './helpers';
-import { clone } from 'opus-ui';
+import { clone } from '@intenda/opus-ui';
 
 const getDropCoordinates = event => {
 	let rect = event.target.getBoundingClientRect();

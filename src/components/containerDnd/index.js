@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 
 //System
-import { ThemedComponent, wrapWidgets, clone } from 'opus-ui';
+import { ThemedComponent, wrapWidgets, clone } from '@intenda/opus-ui';
 
 //Styles
 import './styles.css';

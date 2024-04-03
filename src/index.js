@@ -17,7 +17,7 @@ import propsLineDragger from './components/lineDragger/props';
 import propsMover from './components/mover/props';
 
 //Opus Lib
-import Opus, { Component } from 'opus-ui';
+import Opus, { Component } from '@intenda/opus-ui';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

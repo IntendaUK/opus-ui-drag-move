@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 
 //System
-import { createContext, wrapWidgets } from 'opus-ui';
+import { createContext, wrapWidgets } from '@intenda/opus-ui';
 
 //External Helpers
 import { setDragger, reset } from '../containerMovable/moveManager';

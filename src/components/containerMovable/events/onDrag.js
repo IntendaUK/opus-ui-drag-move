@@ -1,5 +1,5 @@
 //External Helpers
-import { initAndRunScript } from 'opus-ui';
+import { initAndRunScript } from '@intenda/opus-ui';
 
 //Helpers
 import { getDragger, isDisabled, isTrackOnly } from '../moveManager';
