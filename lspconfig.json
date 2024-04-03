@@ -1,0 +1,24 @@
+{
+	"components": [
+		{
+			"name": "containerDnd",
+			"path": "src/components/containerDnd"
+		},
+		{
+			"name": "containerMovable",
+			"path": "src/components/containerMovable"
+		},
+		{
+			"name": "dragger",
+			"path": "src/components/dragger"
+		},
+		{
+			"name": "lineDragger",
+			"path": "src/components/lineDragger"
+		},
+		{
+			"name": "mover",
+			"path": "src/components/mover"
+		}
+	]
+}
