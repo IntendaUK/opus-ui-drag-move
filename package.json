@@ -1,6 +1,6 @@
 {
 	"name": "@intenda/opus-ui-drag-move",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"private": false,
 	"main": "dist/library.js",
 	"homepage": ".",
