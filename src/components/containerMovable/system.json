@@ -4,6 +4,7 @@
         "functions": [],
         "dependents": [
             {
+                "fileExistsInOpusUiFolder": true,
                 "path": "src/components/container/propsShared.js",
                 "functions": [
                     {
