@@ -78,7 +78,7 @@ const getDragger = ({ changeIds }) => {
 	return result;
 };
 
-const getDropper = ({ changeIdsOnReorder, changeIdsOnDrop }, isReorder) => {
+const getDropper = ({ state: { changeIdsOnReorder, changeIdsOnDrop } }, isReorder) => {
 	const changeIds = (
 		(
 			isReorder &&

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 
 //External Helpers
-import { wrapWidgets } from '@intenda/opus-ui';
+import { wrapWidgets, clone } from '@intenda/opus-ui';
 
 //Styles
 import './styles.css';
@@ -20,19 +20,29 @@ const onMount = ({ wgts, setState }) => {
 
 //Helpers
 const getWgts = ({ ChildWgt, children, state }) => {
-	const { wgts, vis, renderChildren, renderChildrenWhenInvis, extraWgts } = state;
+	const { vis, renderChildren, renderChildrenWhenInvis } = state;
 
-	if ((!wgts && !extraWgts.length) || !renderChildren || (!vis && !renderChildrenWhenInvis))
+	if (!renderChildren || (!vis && !renderChildrenWhenInvis))
 		return null;
 
-	const wgtsList = [];
-	if (wgts)
-		wgtsList.push(...wgts);
-	wgtsList.push(...extraWgts);
+	const { wgts, extraWgts, cloneChildrenBeforeMount } = state;
+
+	let useWgts = [];
+	if (!cloneChildrenBeforeMount) {
+		if (wgts?.length)
+			useWgts.push(...wgts);
+		if (extraWgts?.length)
+			useWgts.push(...extraWgts);
+	} else {
+		if (wgts?.length)
+			useWgts.push(...clone([], wgts));
+		if (extraWgts?.length)
+			useWgts.push(...clone([], extraWgts));
+	}
 
 	const result = wrapWidgets({
 		ChildWgt,
-		wgts: wgtsList
+		wgts: useWgts
 	});
 
 	if (children) {

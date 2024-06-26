@@ -27,11 +27,8 @@ const props = {
 		dft: () => {
 			return {
 				id: 'd1',
-				type: 'icon',
-				prps: {
-					color: 'mediumGrey',
-					value: 'add'
-				}
+				type: 'label',
+				prps: { cpt: '[dropper]' }
 			};
 		}
 	},
