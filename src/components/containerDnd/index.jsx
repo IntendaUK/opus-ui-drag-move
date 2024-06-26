@@ -23,17 +23,44 @@ const onMount = ({ wgts, setState }) => {
 };
 
 //Helpers
-const getWgts = ({ id, ChildWgt, children, state }) => {
-	const { wgts, vis, renderChildren, renderChildrenWhenInvis } = state;
+const injectPlaceholderIntoWgts = (
+	result,
+	{ id, state: { dropPlaceholderMda, dropPlaceholderId, renderDropPlaceholderIndex } }
+) => {
+	const insertIndex = renderDropPlaceholderIndex;
 
-	if (!wgts || !renderChildren || (!vis && !renderChildrenWhenInvis))
+	const clonedDropPlaceholderMda = clone({}, dropPlaceholderMda);
+
+	clonedDropPlaceholderMda.id = dropPlaceholderId;
+	clonedDropPlaceholderMda.parentId = id;
+
+	result.splice(
+		insertIndex,
+		0,
+		<ThemedComponent key={dropPlaceholderId} mda={clonedDropPlaceholderMda} />
+	);
+};
+
+const getWgts = props => {
+	const { ChildWgt, children, state } = props;
+	const { vis, renderChildren, renderChildrenWhenInvis } = state;
+
+	if (!renderChildren || (!vis && !renderChildrenWhenInvis))
 		return null;
 
-	const { renderDropPlaceholder, renderDropPlaceholderIndex } = state;
+	const { wgts, cloneChildrenBeforeMount, renderDropPlaceholder } = state;
+
+	let useWgts = [];
+	if (wgts?.length) {
+		if (!cloneChildrenBeforeMount)
+			useWgts.push(...wgts);
+		else
+			useWgts.push(...clone([], wgts));
+	}
 
 	const result = wrapWidgets({
 		ChildWgt,
-		wgts: [...wgts]
+		wgts: useWgts
 	});
 
 	if (children) {
@@ -43,22 +70,8 @@ const getWgts = ({ id, ChildWgt, children, state }) => {
 			result.push(children);
 	}
 
-	if (renderDropPlaceholder) {
-		const { dropPlaceholderMda, dropPlaceholderId } = state;
-
-		const insertIndex = renderDropPlaceholderIndex;
-
-		const clonedDropPlaceholderMda = clone({}, dropPlaceholderMda);
-
-		clonedDropPlaceholderMda.id = dropPlaceholderId;
-		clonedDropPlaceholderMda.parentId = id;
-
-		result.splice(
-			insertIndex,
-			0,
-			<ThemedComponent key={dropPlaceholderId} mda={clonedDropPlaceholderMda} />
-		);
-	}
+	if (renderDropPlaceholder)
+		injectPlaceholderIntoWgts(result, props);
 
 	return result;
 };
