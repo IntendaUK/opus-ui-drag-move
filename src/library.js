@@ -46,3 +46,6 @@ registerComponentTypes([{
 export {
 	getDragger, setTrackOnly, isTrackOnly, isDisabled
 } from './components/containerMovable/moveManager';
+
+export { default as onDropContainerMovable } from './components/containerMovable/events/onDrop';
+
