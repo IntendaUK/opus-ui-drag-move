@@ -1,19 +1,19 @@
 {
     "propSpecConfig": {
-        "path": "src/components/containerMovable/props.js",
+        "path": "dist/components/containerMovable/props.js",
         "functions": [],
         "dependents": [
             {
                 "fileExistsInOpusUiFolder": true,
-                "path": "src/components/container/propsShared.js",
+                "path": "dist/components/container/propsShared.js",
                 "functions": [
                     {
                         "key": "mapToColor",
-                        "path": "src/props/cssMaps/mapToColor.js"
+                        "path": "dist/props/cssMaps/mapToColor.js"
                     },
                     {
                         "key": "mapToSize",
-                        "path": "src/props/cssMaps/mapToSize.js"
+                        "path": "dist/props/cssMaps/mapToSize.js"
                     }
                 ],
                 "dependents": []

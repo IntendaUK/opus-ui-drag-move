@@ -1,6 +1,6 @@
 {
     "propSpecConfig": {
-        "path": "src/components/lineDragger/props.js",
+        "path": "dist/components/lineDragger/props.js",
         "functions": [],
         "dependents": []
     }

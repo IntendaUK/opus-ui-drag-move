@@ -1,6 +1,6 @@
 {
     "propSpecConfig": {
-        "path": "src/components/dragger/props.js",
+        "path": "dist/components/dragger/props.js",
         "functions": [],
         "dependents": []
     }

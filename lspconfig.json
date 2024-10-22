@@ -2,23 +2,23 @@
 	"components": [
 		{
 			"name": "containerDnd",
-			"path": "src/components/containerDnd"
+			"path": "dist/components/containerDnd"
 		},
 		{
 			"name": "containerMovable",
-			"path": "src/components/containerMovable"
+			"path": "dist/components/containerMovable"
 		},
 		{
 			"name": "dragger",
-			"path": "src/components/dragger"
+			"path": "dist/components/dragger"
 		},
 		{
 			"name": "lineDragger",
-			"path": "src/components/lineDragger"
+			"path": "dist/components/lineDragger"
 		},
 		{
 			"name": "mover",
-			"path": "src/components/mover"
+			"path": "dist/components/mover"
 		}
 	]
 }

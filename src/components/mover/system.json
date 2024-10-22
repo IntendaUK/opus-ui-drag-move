@@ -1,6 +1,6 @@
 {
     "propSpecConfig": {
-        "path": "src/components/mover/props.js",
+        "path": "dist/components/mover/props.js",
         "functions": [],
         "dependents": []
     }
