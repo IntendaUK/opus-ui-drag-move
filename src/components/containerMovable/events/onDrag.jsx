@@ -43,6 +43,8 @@ const runScripts = (props, dragger, el) => {
 	});
 };
 
+const cacheIdLookup = new Map();
+
 //Event
 const onDrag = (props, e) => {
 	if (isDisabled())
@@ -51,13 +53,19 @@ const onDrag = (props, e) => {
 	const dragger = getDragger();
 	const { id, originalX, originalY, grabX, grabY } = dragger;
 
-	const el = document.getElementById(id);
+	let el = cacheIdLookup.get(id);
+	if (!el || !el.isConnected) {
+		el = document.getElementById(id);
+		cacheIdLookup.set(id, el);
+	}
 
 	const scale = el.getBoundingClientRect().width / el.offsetWidth;
 
 	if (!isTrackOnly()) {
-		el.style.left = (originalX + ((e.clientX - grabX) / scale)) + 'px';
-		el.style.top = (originalY + ((e.clientY - grabY) / scale)) + 'px';
+		requestAnimationFrame(() => {
+			el.style.left = ~~(originalX + ((e.clientX - grabX) / scale)) + 'px';
+			el.style.top = ~~(originalY + ((e.clientY - grabY) / scale)) + 'px';
+		});
 	}
 
 	if (props.state.scpsOnMove !== undefined)
