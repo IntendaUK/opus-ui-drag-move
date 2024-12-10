@@ -51,7 +51,15 @@ const onDrag = (props, e) => {
 	const dragger = getDragger();
 	const { id, originalX, originalY, grabX, grabY } = dragger;
 
-	const el = document.getElementById(id);
+	//In Chrome, if we do a really fast drag and drop, e.clientX and e.clientY are sometimes 0
+	if (e.clientX === 0 && e.clientY === 0)
+		return;
+
+	let el = cacheIdLookup.get(id);
+	if (!el || !el.isConnected) {
+		el = document.getElementById(id);
+		cacheIdLookup.set(id, el);
+	}
 
 	const scale = el.getBoundingClientRect().width / el.offsetWidth;
 
