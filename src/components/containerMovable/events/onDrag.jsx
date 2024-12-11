@@ -9,6 +9,7 @@ let cdMax = 14;
 let cd = cdMax;
 let lastRunX = 0;
 let lastRunY = 0;
+const cacheIdLookup = new Map();
 
 //Helpers
 const runScripts = (props, dragger, el) => {
