@@ -10,19 +10,28 @@ createRoot(document.getElementById('root'))
 	.render(
 		<Opus
 			startupMda={{
-				type: 'containerMovable',
-				prps: { singlePage: true },
+				type: 'containerSimple',
+				prps: {
+					singlePage: true,
+					backgroundColor: 'lightGrey',
+					mainAxisAlign: 'center',
+					crossAxisAlign: 'center',
+					gap: '24px'
+				},
 				wgts: [{
-					type: 'mover',
+					type: 'label',
 					prps: {
-						position: 'absolute',
-						left: '100px',
-						top: '100px'
-					},
-					wgts: [{
-						type: 'label',
-						prps: { cpt: 'Drag me' }
-					}]
+						cpt: '@intenda/opus-ui-drag-move',
+						fontSize: '32px',
+						color: '#222'
+					}
+				}, {
+					type: 'label',
+					prps: {
+						cpt: 'Check out the samples for more info...',
+						fontSize: '18px',
+						color: '#888'
+					}
 				}]
 			}}
 		/>
