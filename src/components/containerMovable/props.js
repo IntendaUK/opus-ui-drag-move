@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 //System Helpers
-import { clone, generateGuid, propsSharedContainer } from '@intenda/opus-ui';
+import { clone, generateGuid, propsSharedContainer, spliceWhere } from '@intenda/opus-ui';
 
 //Props
 const props = {
@@ -51,7 +51,7 @@ const props = {
 				deletedValue = [ deletedValue];
 
 			deletedValue.forEach(mda => {
-				oldValue.spliceWhere(({ id }) => {
+				spliceWhere(oldValue, ({ id }) => {
 					const doDelete = (
 						id === mda.id ||
 						mda.all ||

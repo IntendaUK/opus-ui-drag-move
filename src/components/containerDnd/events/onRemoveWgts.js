@@ -1,5 +1,5 @@
 //Helpers
-import { clone } from '@intenda/opus-ui';
+import { clone, spliceWhere } from '@intenda/opus-ui';
 
 //Event
 const onRemoveWgts = ({ setState, state: { wgts, removeWgts, removeOnDrop } }) => {
@@ -14,7 +14,7 @@ const onRemoveWgts = ({ setState, state: { wgts, removeWgts, removeOnDrop } }) =
 		}));
 
 	removedEntries.forEach(({ mda: { id: removedWgtId } }) => {
-		wgts.spliceWhere(w => w.id === removedWgtId);
+		spliceWhere(wgts, w => w.id === removedWgtId);
 	});
 
 	setState({
