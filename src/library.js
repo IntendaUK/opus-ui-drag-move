@@ -2,6 +2,9 @@
 import { registerComponentTypes } from '@intenda/opus-ui';
 
 //Components
+export * from './libraryComponents';
+
+//Components
 import { ContainerDnd } from './components/containerDnd';
 import { ContainerMovable } from './components/containerMovable';
 import { Dragger } from './components/dragger';
